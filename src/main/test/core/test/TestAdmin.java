@@ -133,8 +133,5 @@ public class TestAdmin {
         
     } //Changing class more than the enrolled - false case
     
- 
-    //label the test funcs as @Test
-    //Make 3 classes for every class you will be testing and testmethod for every method
 }
 

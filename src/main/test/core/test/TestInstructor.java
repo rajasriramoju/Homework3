@@ -22,7 +22,6 @@ public class TestInstructor {
     private IStudent student;
     private IAdmin admin;
     
-
     @Before
     public void setup() {
         this.instructor = new Instructor();
@@ -46,6 +45,14 @@ public class TestInstructor {
     	assertFalse(this.instructor.homeworkExists("Test", 2017, "hw1"));
     	
     } // wrong instructor assigns homework
+    
+    public void addHomeworkTestNoClass() {
+        //(String instructorName, String className, int year, String homeworkName)
+      	//this.admin.createClass("Test", 2017, "Teacher", 15);
+      	this.instructor.addHomework("Teacher", "Test", 2017, "hw1");
+      	assertFalse(this.instructor.homeworkExists("Test", 2017, "hw1"));
+      	
+      } // false case coz class doesn't exist
     
     @Test
     public void addHomeworkBlankHomework() {
@@ -119,6 +126,7 @@ public class TestInstructor {
     	//void assignGrade(String instructorName, String className, int year, String homeworkName, String studentName, int grade);
 
     } //true case -> homework has been submitted and grade is present but 0
+    
     
     @Test
     public void assignGradeTestGradeNegative() {
